@@ -1,0 +1,27 @@
+{
+  "name": "nwind_spa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.8",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chalk": "^1.1.1",
+    "mocha": "^2.4.5",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.1",
+    "supertest": "^1.2.0",
+    "supertest-as-promised": "^3.0.0"
+  }
+}
