@@ -9,6 +9,10 @@ var taskSchema = new Schema({
 
 });
 
+taskSchema.statics.getAll = function(){
+  return this.find({});
+};
+
 var Task = mongoose.model('Task', taskSchema);
 
 var _conn;
@@ -34,7 +38,15 @@ function seed(){
     })
     .then(function(result){
 
-      return Task.create({ name: 'test', priority: 1 });
+      return Task.create({ name: 'task 1', priority: 1 });
+    })
+    .then(function(result){
+
+      return Task.create({ name: 'task 2', priority: 10 });
+    })
+    .then(function(result){
+
+      return Task.create({ name: 'task 3', priority: 100});
     });
 
 }
