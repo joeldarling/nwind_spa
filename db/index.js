@@ -49,6 +49,7 @@ function seed(){
       return Task.remove({});
     })
     .then(function(result){
+      //you could use Promise.all([ Task.create({...}), Task.create({...})])
 
       return Task.create({ name: 'task 1', priority: 1 });
     })

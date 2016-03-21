@@ -13,9 +13,12 @@ module.exports = router;
 router.get('/', function(req, res, next){
 
   //home page
+  //how about res.sendFile(path.join(__dirname, '..', 'public/index.html'));
   res.redirect('/index.html');
 
 });
+
+//use restful routes /tasks instead of /task
 
 router.get('/task', function(req, res, next){
   Task.getAllSorted()

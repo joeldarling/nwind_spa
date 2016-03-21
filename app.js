@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 
 app.use('/', require('./routes'));
 
+//how about a server file-- this way we won't start listening when we are doing testing.
 app.listen(3000, function(){
 
   green('server listening on 3000');
