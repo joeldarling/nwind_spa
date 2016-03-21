@@ -9,10 +9,21 @@ var taskSchema = new Schema({
 
 });
 
-taskSchema.statics.getAll = function(){
+taskSchema.statics.getAllSorted = function(){
 
-  return this.find({});
+  return this.find({}).sort('priority');
 };
+
+taskSchema.pre('save', function(next) {
+
+  if(!this.name)
+    this.name = 'Tell Me What You Want';
+
+  if(!this.priority)
+    this.priority = Math.floor(Math.random()*100);
+
+  next();
+});
 
 var Task = mongoose.model('Task', taskSchema);
 

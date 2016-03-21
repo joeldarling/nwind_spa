@@ -27,6 +27,8 @@
         <div class="row">
           <h4> Tasks: </h4>
           <div class='panel panel-default'>
+
+
                 <div class="panel-body" ng-repeat="(key, Task) in tasks"> {{ Task.name }}
 
                   <span><button class="btn btn-xs btn-danger pull-right" ng-click="deleteTask(key)">Delete</button></span>

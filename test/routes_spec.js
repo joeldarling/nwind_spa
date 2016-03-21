@@ -13,7 +13,7 @@ describe('/', function(){
   });
 });
 
-describe('POST /task', function(){
+describe('/task', function(){
 
   var _id;
 
@@ -32,7 +32,6 @@ describe('POST /task', function(){
   });
   it('database retains the new task', function(){
     return request.get('/task')
-    .expect(200)
     .then(function(res){
       expect(res.body.length).to.equal(4);
     });
@@ -44,6 +43,14 @@ describe('POST /task', function(){
     .expect(200)
     .then(function(result){
       expect(result.body.length).to.equal(3);
+    });
+
+  });
+
+  it('can return a sorted list', function(){
+    return request.get('/task')
+    .then(function(result){
+      expect(result.body[0].priority).to.be.below(result.body[1].priority);
     });
 
   });

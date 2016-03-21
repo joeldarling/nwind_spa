@@ -15,7 +15,7 @@ app.use('/angular', express.static(__dirname + '/node_modules/angular'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(morgan('dev'));
+//app.use(morgan('dev'));
 
 app.use('/', require('./routes'));
 

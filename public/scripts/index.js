@@ -6,10 +6,7 @@ app.controller('TaskListController', function($scope, $http) {
       $http.get('/task')
       .then(function(response){
 
-        response.data.sort(function(a,b){
-          return a.priority - b.priority;
-        });
-
+        
         $scope.tasks = response.data;
       });
     };

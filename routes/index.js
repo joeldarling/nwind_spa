@@ -18,9 +18,9 @@ router.get('/', function(req, res, next){
 });
 
 router.get('/task', function(req, res, next){
-  Task.find({})
+  Task.getAllSorted()
   .then(function(result){
-    res.send(result);
+    res.status(200).send(result);
   }, next);
 });
 
