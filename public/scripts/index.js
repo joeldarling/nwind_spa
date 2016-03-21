@@ -5,8 +5,6 @@ app.controller('TaskListController', function($scope, $http) {
     $scope.getTasks = function(){
       $http.get('/task')
       .then(function(response){
-
-        
         $scope.tasks = response.data;
       });
     };
@@ -39,13 +37,10 @@ app.controller('TaskListController', function($scope, $http) {
         newPriority--;
 
       $scope.changePriority($scope.tasks[task], newPriority);
-
     };
     $scope.moveTaskDown = function(task){
       var newPriority = $scope.tasks[task+1].priority + 1;
-
       $scope.changePriority($scope.tasks[task], newPriority);
-
     };
 
     $scope.changePriority = function(item, priority){
@@ -57,5 +52,4 @@ app.controller('TaskListController', function($scope, $http) {
     };
 
     $scope.getTasks();
-
 });

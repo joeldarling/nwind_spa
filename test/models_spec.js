@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 
 var db = require('../db');
-var Task = require('../db').models.Task;
+var Task = db.models.Task;
 
 describe('Task Model', function(){
   var results;
