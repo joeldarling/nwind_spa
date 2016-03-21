@@ -34,6 +34,17 @@ router.post('/task', function(req, res, next){
   },next);
 });
 
+router.put('/task/:id/:priority', function(req, res, next){
+  Task.findOne({_id: req.params.id})
+  .then(function(task){
+    task.priority = req.params.priority;
+    return task.save();
+  })
+  .then(function(result){
+    res.send(result);
+  });
+});
+
 router.delete('/task/:id', function(req, res, next){
   Task.findOneAndRemove({_id: req.params.id})
   .then(function(){

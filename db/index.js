@@ -10,6 +10,7 @@ var taskSchema = new Schema({
 });
 
 taskSchema.statics.getAll = function(){
+
   return this.find({});
 };
 
