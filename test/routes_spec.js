@@ -8,12 +8,14 @@ describe('/', function(){
     return request.get('/')
       .expect(200)
       .then(function(res){
-        expect(res.text).to.contain('Home');
+        expect(res.text).to.contain('Task');
       });
   });
 });
 
 describe('POST /task', function(){
+
+  var _id;
 
   it('can add a new task', function(){
 
@@ -24,7 +26,7 @@ describe('POST /task', function(){
 
       expect(res.body.name).to.equal('task xyz');
       expect(res.body.priority).to.equal(1);
-
+      _id = res.body._id;
       return request.get('/');
     });
   });
@@ -38,8 +40,7 @@ describe('POST /task', function(){
 
 
   it('can delete a task', function(){
-    return request.delete('/task')
-    .send({name: 'task xyz'})
+    return request.delete('/task/' + _id)
     .expect(200)
     .then(function(result){
       expect(result.body.length).to.equal(3);

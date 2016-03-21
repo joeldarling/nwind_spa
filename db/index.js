@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var taskSchema = new Schema({
 
   name: String,
-  priority: { type: Number }
+  priority: { type: Number },
 
 });
 

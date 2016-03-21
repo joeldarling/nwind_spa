@@ -7,9 +7,41 @@
     <script src="/angular/angular.js"></script>
     <script src="./scripts/index.js"></script>
   </head>
-  <body>
+  <body ng-app="nwind_spa">
 
-    hey there
+      <div class="container"  ng-controller="TaskListController">
+        <h3> That Spa Tho</h3>
+        <div class="row">
+          <h4> Add a task </h4>
+          <div class"col-sm-12">
+            <div class="form-group" role="form">
+                <input class="form-control" type="text" ng-model="inputs.name" placeholder="Task Name">
+                <input class="form-control" type="number" ng-model="inputs.priority" placeholder="Priority">
+                <button type="submit" class="btn btn-primary pull-center" ng-click="addTask()">Save</button>
+            </div>
+
+          </div>
+
+        </div>
+        <br/>
+        <div class="row">
+          <h4> Tasks: </h4>
+          <div class='panel panel-default'>
+
+
+                <div class="panel-body" ng-repeat="(key, Task) in tasks"> {{ Task.name }}
+
+                  <span><button class="btn btn-xs btn-danger pull-right" ng-click="deleteTask(key)">Delete</button></span>
+                  <span><button class="btn btn-xs btn-primary pull-right" ng-click="moveTaskUp(key)">Up</button></span>
+                  <span><button class="btn btn-xs btn-primary pull-right" ng-click="moveTaskDown(key)">Down</button></span>
+                  <span class="badge pull-right"> {{ Task.priority }} </span>
+
+                </div>
+          </div>
+
+        </div>
+      </div>
+
   </body>
 
 </html>
