@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
+//var morgan = require('morgan');
 var green = require('./utils/utils').green;
 var red = require('./utils/utils').red;
 
